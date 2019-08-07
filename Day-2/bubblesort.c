@@ -30,49 +30,52 @@ void display(int size,int b_sort[]){
 }
 void bubblesort(int size,int b_sort[]){
 	for(int i=0;i<size;i++){
+		printf("\n%d iteration ",i);
 		for(int j=0;j<size-i-1;j++){
 			if(b_sort[j]>b_sort[j+1]){
 				int temp=b_sort[j];
 				b_sort[j]=b_sort[j+1];
 				b_sort[j+1]=temp;	
 			}
+			printf("\n");
+			display(size,b_sort);
 		}
 	}
 }
-void r_sort(int size,int b_sort[]){
-	int m =size/2;
-	int i,j;
-	printf("\n");
-	for(i=0;i<=m;i++){
-		printf("%d ",b_sort[i]);
-	}
-	for(j=size-1;j>=i;j--){
-		printf("%d ",b_sort[j]);
-	}
-} 
-void l_sort(int size,int b_sort[]){
-	int m=size/2;
-	int i,j;
-	printf("\n");
-	for(i=m-1;i>=0;i--){
-		printf("%d ",b_sort[i]);
-	}
-	for(j=m;j<size;j++){
-		printf("%d ",b_sort[j]);
-	}
-}
-void l_r_sort(int size,int b_sort[]){
-	int m=size/2;
-	int i,j;
-	printf("\n");
-	for(i=m-1;i>=0;i--){
-		printf("%d ",b_sort[i]);
-	}
-	printf("%d ",b_sort[m]);
-	for(j=size-1;j>m;j--){
-		printf("%d ",b_sort[j]);
-	}
-}
+//~ void r_sort(int size,int b_sort[]){
+	//~ int m =size/2;
+	//~ int i,j;
+	//~ printf("\n");
+	//~ for(i=0;i<=m;i++){
+		//~ printf("%d ",b_sort[i]);
+	//~ }
+	//~ for(j=size-1;j>=i;j--){
+		//~ printf("%d ",b_sort[j]);
+	//~ }
+//~ } 
+//~ void l_sort(int size,int b_sort[]){
+	//~ int m=size/2;
+	//~ int i,j;
+	//~ printf("\n");
+	//~ for(i=m-1;i>=0;i--){
+		//~ printf("%d ",b_sort[i]);
+	//~ }
+	//~ for(j=m;j<size;j++){
+		//~ printf("%d ",b_sort[j]);
+	//~ }
+//~ }
+//~ void l_r_sort(int size,int b_sort[]){
+	//~ int m=size/2;
+	//~ int i,j;
+	//~ printf("\n");
+	//~ for(i=m-1;i>=0;i--){
+		//~ printf("%d ",b_sort[i]);
+	//~ }
+	//~ printf("%d ",b_sort[m]);
+	//~ for(j=size-1;j>m;j--){
+		//~ printf("%d ",b_sort[j]);
+	//~ }
+//~ }
 int main(){
 	int size;
 	FILE *fs=fopen("size.txt","r");
@@ -85,8 +88,8 @@ int main(){
 	bubblesort(size,b_sort);
 	printf("After sorting:");
 	display(size,b_sort);
-	r_sort(size,b_sort);
-	l_sort(size,b_sort);
-	l_r_sort(size,b_sort);
+	//~ r_sort(size,b_sort);
+	//~ l_sort(size,b_sort);
+	//~ l_r_sort(size,b_sort);
 	return 0;
 }

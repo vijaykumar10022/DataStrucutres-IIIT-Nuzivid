@@ -33,6 +33,9 @@ void selction_sort(int size,int ss[]){
 				ss[j]=temp;
 			}
 			printf("\n");
+			//~ for(int k=0;k<size;k++){
+				//~ printf("%d ",ss[k]);
+			//~ }
 			display(size,ss);
 		}
 		printf("\n");
