@@ -10,6 +10,32 @@ void display(int size,int ms[]){
 		printf("%d ",ms[i]);
 	}
 }
+void merge_array(int a,int b,int c,int d,int ms[]){
+	int t[50];
+	int q=0;
+	while(a<=b&&c<=d){
+		if(ms[a]<ms[c]){
+			t[q]=ms[a]
+			q++;
+			a++;
+		}
+		else{
+			t[q]=ms[c];
+			q++;
+			c++;
+		}
+	} 
+		
+}
+void merge_sort(int s,int e,int ms[]){
+	int m;
+	if(s<e){
+		m=(s+e)/2;
+		merge_sort(s,m,ms);
+		merge_sort(m+1,e,ms);
+		merge_array(s,m,m+1,e,ms);
+	}
+} 
 int main(){
 	int size;
 	FILE *fs=fopen("size.txt","r");
@@ -18,5 +44,6 @@ int main(){
 	getvalues(size,ms);
 	printf("Before Sorting:");
 	display(size,ms);
+	merge_sort(0,size,ms);
 	return 0;
 }
